@@ -10,10 +10,12 @@
     <div class="dashboard__charts">
       <div>
         <div id="orders" class="dashboard__chart_orders"></div>
+
         <input id="start" type="text" value="2020-03-06" placeholder="yy-mm-dd"/>
         <input id="end" type="text" value="2020-05-06" placeholder="yy-mm-dd"/>
         <button id="loadOrders">Load data</button>
       </div>
+
       <div id="sales" class="dashboard__chart_sales"></div>
       <div id="customers" class="dashboard__chart_customers"></div>
     </div>
@@ -28,7 +30,8 @@
           to: new Date('2020-05-06'),
         },
         label: 'orders',
-        link: '#'
+        link: '#',
+        formatHeading: data => `$${data}`
       });
 
       loadOrders.addEventListener('click', () => {
